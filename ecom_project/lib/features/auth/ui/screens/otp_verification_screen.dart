@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import 'complete_profile_screen.dart';
+
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({super.key});
   static const String name = '/otp-verification';
@@ -88,8 +90,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 const SizedBox(height: 24),
                 ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {}
-                    return;
+                    // if (_formKey.currentState!.validate()) {}
+                    // return;
+                    Navigator.pushNamed(context, CompleteProfileScreen.name);
                   },
                   child: Text('NEXT'),
                 ),

@@ -1,4 +1,5 @@
 import 'package:ecom_project/app/app_theme_data.dart';
+import 'package:ecom_project/features/auth/ui/screens/complete_profile_screen.dart';
 import 'package:ecom_project/features/auth/ui/screens/email_verification_screen.dart';
 import 'package:ecom_project/features/auth/ui/screens/otp_verification_screen.dart';
 import 'package:ecom_project/features/auth/ui/screens/splash_screen.dart';
@@ -16,6 +17,7 @@ class BdBay extends StatelessWidget {
         '/' : (context)=>SplashScreen(),
         EmailVerificationScreen.name : (context) =>EmailVerificationScreen(),
         OtpVerificationScreen.name : (context) => OtpVerificationScreen(),
+        CompleteProfileScreen.name : (context) => CompleteProfileScreen(),
       },
     );
   }

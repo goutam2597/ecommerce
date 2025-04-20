@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             SizedBox(height: 50,),
             Spacer(),
-            AppLogoWidget(),
+            AppLogoWidget(logoHeight: 200,),
             Spacer(),
             CircularProgressIndicator(),
             SizedBox(height: 50,),
