@@ -43,10 +43,9 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: () {
-                  // if (_formKey.currentState!.validate()) {}
-                  Navigator.pushNamed(context, CompleteProfileScreen.name);
+                  if (_formKey.currentState!.validate()) {}
                 },
-                child: Text('NEXT'),
+                child: Text('COMPLETE'),
               ),
               const SizedBox(height: 24),
             ],
@@ -62,6 +61,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
       child: Column(
         children: [
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: _firstNameTEController,
             decoration: const InputDecoration(hintText: 'First Name'),
             validator: (String? value) {
@@ -73,6 +73,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
           ),
           const SizedBox(height: 10),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: _lastNameTEController,
             decoration: const InputDecoration(hintText: 'Last Name'),
             validator: (String? value) {
@@ -84,17 +85,22 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
           ),
           const SizedBox(height: 10),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: _mobileNoTEController,
             decoration: const InputDecoration(hintText: 'Mobile'),
             validator: (String? value) {
               if (value?.trim().isEmpty ?? true) {
-                return 'Enter valid number';
+                return 'Enter a mobile number';
+              }
+              if (RegExp(r'^01[3-9]\d{8}$').hasMatch(value!) == false) {
+                return 'Enter a valid mobile number';
               }
               return null;
             },
           ),
           const SizedBox(height: 10),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: _cityTEController,
             keyboardType: TextInputType.phone,
             decoration: const InputDecoration(hintText: 'City'),
@@ -107,6 +113,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
           ),
           const SizedBox(height: 10),
           TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: _shippingAddressTEController,
             maxLines: 3,
             decoration: const InputDecoration(hintText: 'Shipping Address'),
